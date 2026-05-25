@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-slide-in {
+    animation: slideIn 0.2s ease-out forwards;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+body {
+  width: 440px;
+  min-height: 580px;
+  margin: 0;
+  overflow: hidden;
+}
+
+#root {
+  height: 580px;
+  display: flex;
+  flex-direction: column;
+}

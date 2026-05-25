@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AI Cover Letter Generator",
+  "version": "1.0.0",
+  "description": "Generate custom cover letters instantly from job descriptions.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "src/background/service-worker.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/extractor.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": ["<all_urls>"]
+}
